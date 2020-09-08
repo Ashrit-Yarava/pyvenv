@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 
 def print_help(program_name):
@@ -40,12 +40,12 @@ def parse_args():
     """
     Custom parser to check if arguments match the requirements.
     """
-    program_name, args = sys.argv[0], sys.argv[1:]
+    program_name, args = 'pyvenv', sys.argv[1:]
     exit = False
 
     if "-h" in args or "--help" in args:
         exit = True
-    elif args[0] != "create" or args[0] != "remove" or args[0] != "shell":
+    elif args[0] != "create" and args[0] != "remove" and args[0] != "shell":
         exit = True
     elif len(args) != 2:
         exit = True
