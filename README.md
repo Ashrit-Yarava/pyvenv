@@ -1,3 +1,3 @@
 # PyVenv
 ---
-> Minimalist command line python environment manager.
+> A minimalist python environment manager.

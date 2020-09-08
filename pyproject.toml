@@ -1,12 +1,21 @@
 [tool.poetry]
 name = "pyvenv"
 version = "0.1.0"
-description = ""
+description = "A minimalist python environment manager."
+license = "MIT"
 authors = ["Ashrit Yarava <ashdragon95@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/Ashrit-Yarava/pyvenv"
+keywords = ["pyvenv", "environment", "venv", "pyenv", "env"]
+
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 clipboard = "^0.0.4"
+termcolor = "^1.1.0"
+
+[tool.poetry.scripts]
+pyvenv = "pyvenv.main:main"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
