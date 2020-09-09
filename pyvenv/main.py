@@ -1,5 +1,5 @@
 from pyvenv.utils import parse_args
-from pyvenv.functions import create, remove, shell
+from pyvenv.functions import create, remove, shell, listShells
 from termcolor import cprint
 
 def main():
@@ -11,5 +11,7 @@ def main():
         remove(value)
     elif option == 'shell':
         shell(value)
+    elif option == 'list':
+        listShells()
     else:
         cprint(f"Something went wrong...", "red")

@@ -32,6 +32,9 @@ Commands:
     shell                    Activate an environment.
         Options: {program_name} activate <environment name>
 
+    list                     List the available environments.
+        Options: {program_name} list
+
     """
     print(help_message)
     exit(1)
@@ -45,10 +48,14 @@ def parse_args():
 
     if "-h" in args or "--help" in args:
         exit = True
-    elif args[0] != "create" and args[0] != "remove" and args[0] != "shell":
+    elif args[0] != "create" and args[0] != "remove" and args[0] != "shell" and args[0] != "list": 
         exit = True
     elif len(args) != 2:
         exit = True
+
+    if args[0] == "list":
+        exit = False
+        args.append('')   
 
     if exit:
         print_help(program_name)

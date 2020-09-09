@@ -1,6 +1,7 @@
 import os, shutil, subprocess, venv, clipboard
 from pathlib import Path
-from termcolor import cprint
+from termcolor import colored
+from glob import glob
 
 def create(environment_name):
     """
@@ -64,3 +65,10 @@ def shell(environment_name):
 
     clipboard.copy(command)
     cprint(f"Copied {command} to clipboard.", "green")
+
+
+def listShells():
+    envs = glob(f"{Path.home() / Path('.local/share/pyvenv') / Path('*')}")
+    for env in envs:
+        path = Path(env).parts[-1]
+        print(f" -> {colored(f'{path}', 'green')}")
